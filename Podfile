@@ -8,4 +8,5 @@ target 'salonatcom' do
   # Pods for salonatcom
 pod 'SDWebImage'
 pod 'Cosmos'
+Pod 'AFNetworking'
 end

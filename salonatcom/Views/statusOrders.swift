@@ -12,7 +12,7 @@ class statusOrders: UITableViewCell {
 
     let imageSallon = creatImagAndLable().image
     let dateIcon = creatImagAndLable().image
-    let data = creatImagAndLable().label
+    let date = creatImagAndLable().label
     let status = creatImagAndLable().label
     let nameSallon = creatImagAndLable().label
     let deletIcon = creatImagAndLable().Button
@@ -23,7 +23,7 @@ class statusOrders: UITableViewCell {
         let stackTop = UIStackView(arrangedSubviews: [deletIcon , nameSallon])
         stackTop.spacing = 5
         stackTop.backgroundColor = .white
-        let stackBotton = UIStackView(arrangedSubviews: [status , data , dateIcon])
+        let stackBotton = UIStackView(arrangedSubviews: [status , date , dateIcon])
         stackBotton.spacing = 5
         stackBotton.backgroundColor = .white
         let allStackLeft = UIStackView(arrangedSubviews: [stackTop , stackBotton])
@@ -33,26 +33,29 @@ class statusOrders: UITableViewCell {
         
         let allViewStack = UIStackView(arrangedSubviews: [allStackLeft , imageSallon])
         allViewStack.spacing = 10
-        setupallViewStack(allViewStack: allViewStack)
+        
+        setupallViewStack(allViewStack: allViewStack, allStackLeft: allStackLeft)
         setupImageSallon(allViewStack: allViewStack)
-        setupIcons(stackTop: stackTop)
+        setupDeletIcons(stackTop: stackTop)
         setupDateIcon(stackBotton: stackBotton)
     }
-    fileprivate func setupIcons(stackTop : UIStackView){
+    fileprivate func setupDeletIcons(stackTop : UIStackView){
         deletIcon.translatesAutoresizingMaskIntoConstraints = false
-        deletIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        deletIcon.topAnchor.constraint(equalTo: stackTop.topAnchor).isActive = true
-        deletIcon.bottomAnchor.constraint(equalTo: stackTop.bottomAnchor).isActive = true
-        deletIcon.leadingAnchor.constraint(equalTo: stackTop.leadingAnchor).isActive = true
+        deletIcon.widthAnchor.constraint(equalTo: stackTop.widthAnchor, multiplier: 0.10).isActive = true
+        deletIcon.heightAnchor.constraint(equalTo: stackTop.heightAnchor , multiplier: 0.60).isActive = true
+        //deletIcon.centerYAnchor.constraint(equalTo: stackTop.centerYAnchor).isActive = true
+        
+        nameSallon.translatesAutoresizingMaskIntoConstraints = false
+        nameSallon.topAnchor.constraint(equalTo: stackTop.topAnchor).isActive = true
     }
-    fileprivate func setupallViewStack(allViewStack : UIStackView){
+    fileprivate func setupallViewStack(allViewStack : UIStackView , allStackLeft : UIStackView){
         addSubview(view)
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
         view.backgroundColor = UIColor.init(white: 2.5, alpha: 1)
-        
+       // view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant:
             8).isActive = true
@@ -68,35 +71,40 @@ class statusOrders: UITableViewCell {
         allViewStack.translatesAutoresizingMaskIntoConstraints = false
         allViewStack.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 8).isActive = true
         allViewStack.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant: -8).isActive = true
-        allViewStack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        allViewStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        allViewStack.topAnchor.constraint(equalTo: view.topAnchor , constant: 8).isActive = true
+        allViewStack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        
     }
     fileprivate func setupImageSallon(allViewStack : UIStackView){
         imageSallon.translatesAutoresizingMaskIntoConstraints = false
-        imageSallon.trailingAnchor.constraint(equalTo: allViewStack.trailingAnchor ,constant:
-            -8).isActive = true
-        imageSallon.topAnchor.constraint(equalTo: allViewStack.topAnchor, constant:
-            8).isActive = true
-        imageSallon.bottomAnchor.constraint(equalTo: allViewStack.bottomAnchor ,constant: -8).isActive = true
-        imageSallon.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageSallon.trailingAnchor.constraint(equalTo: allViewStack.trailingAnchor).isActive = true
+        imageSallon.topAnchor.constraint(equalTo: allViewStack.topAnchor).isActive = true
+        imageSallon.bottomAnchor.constraint(equalTo: allViewStack.bottomAnchor).isActive = true
+        imageSallon.widthAnchor.constraint(equalTo: allViewStack.widthAnchor, multiplier: 0.30).isActive = true
         imageSallon.clipsToBounds = true
         imageSallon.layer.cornerRadius = 12
         imageSallon.layer.borderColor = UIColor.white.cgColor
         imageSallon.layer.borderWidth = 1
     }
  
-    fileprivate func setupDateIcon(stackBotton : UIStackView){
+    fileprivate func setupDateIcon(stackBotton : UIStackView ){
         dateIcon.translatesAutoresizingMaskIntoConstraints = false
         dateIcon.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        dateIcon.topAnchor.constraint(equalTo: stackBotton.topAnchor , constant: 10).isActive = true
-        dateIcon.bottomAnchor.constraint(equalTo: stackBotton.bottomAnchor, constant: -10).isActive = true
-        dateIcon.trailingAnchor.constraint(equalTo: imageSallon.leadingAnchor , constant: -5).isActive = true
+        dateIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        dateIcon.centerYAnchor.constraint(equalTo: stackBotton.centerYAnchor).isActive = true
+//        dateIcon.trailingAnchor.constraint(equalTo: imageSallon.leadingAnchor , constant: -5).isActive = true
         
-        data.translatesAutoresizingMaskIntoConstraints = false
-        data.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        data.topAnchor.constraint(equalTo: stackBotton.topAnchor).isActive = true
-        data.bottomAnchor.constraint(equalTo: stackBotton.bottomAnchor).isActive = true
-        data.trailingAnchor.constraint(equalTo: dateIcon.leadingAnchor , constant: -10).isActive = true
+        date.translatesAutoresizingMaskIntoConstraints = false
+        date.widthAnchor.constraint(equalTo: stackBotton.widthAnchor, multiplier: 0.40).isActive = true
+        date.trailingAnchor.constraint(equalTo: dateIcon.leadingAnchor , constant: -10).isActive = true
+        
+        status.translatesAutoresizingMaskIntoConstraints = false
+        let deviceType = UIDevice.current.deviceText
+        if deviceType == "iPad" {
+            status.leadingAnchor.constraint(equalTo: stackBotton.leadingAnchor, constant: 50).isActive = true
+        }else{
+           status.leadingAnchor.constraint(equalTo: stackBotton.leadingAnchor, constant: 10).isActive = true
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

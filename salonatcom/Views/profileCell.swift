@@ -9,7 +9,7 @@
 import UIKit
 
 class PrfileCell : UITableViewCell {
-    let nameService = creatImagAndLable().label
+    let nameService  = creatImagAndLable().label 
     let detailService = creatImagAndLable().label
     let imageService = creatImagAndLable().image
     let icon = creatImagAndLable().Button
@@ -42,8 +42,6 @@ class PrfileCell : UITableViewCell {
             0.10).isActive = true
         icon.heightAnchor.constraint(equalTo: stack2.heightAnchor, multiplier:
             0.30).isActive = true
-    
-    
     }
     fileprivate func setupStack2(Stack2 : UIStackView){
         addSubview(Stack2)

@@ -30,6 +30,7 @@
 		58C7EFFF2312753F009A1B4A /* AppSalonat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7EFFE2312753F009A1B4A /* AppSalonat.swift */; };
 		58C7F0012312AFDE009A1B4A /* Data Saloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7F0002312AFDE009A1B4A /* Data Saloon.swift */; };
 		58F2CF88230DDA5B0094EF09 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2CF87230DDA5B0094EF09 /* File.swift */; };
+		58FD98CD232527C500CD50CB /* fontsize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD98CC232527C500CD50CB /* fontsize.swift */; };
 		9EB9DB2C523215318308C7A9 /* Pods_salonatcom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50665DCB9ADF070A78A6096A /* Pods_salonatcom.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		58C7EFFE2312753F009A1B4A /* AppSalonat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSalonat.swift; sourceTree = "<group>"; };
 		58C7F0002312AFDE009A1B4A /* Data Saloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Saloon.swift"; sourceTree = "<group>"; };
 		58F2CF87230DDA5B0094EF09 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		58FD98CC232527C500CD50CB /* fontsize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontsize.swift; sourceTree = "<group>"; };
 		91035843BD8BFE4A2A99A803 /* Pods-salonatcom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-salonatcom.release.xcconfig"; path = "Target Support Files/Pods-salonatcom/Pods-salonatcom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,6 @@
 			children = (
 				58F2CF86230DDA460094EF09 /* Models */,
 				588815E5230BE263007DFE2A /* Views */,
-				583DFA33230705B20075213B /* Controller */,
 				583DFA1E2306F08A0075213B /* AppDelegate.swift */,
 				583DFA222306F08A0075213B /* Main.storyboard */,
 				583DFA252306F08B0075213B /* Assets.xcassets */,
@@ -143,6 +144,7 @@
 				58BECAC9231E42C7007E0F28 /* ProfileCells.swift */,
 				58400B73231F866B00738EF5 /* statusOrders.swift */,
 				5808AFE323225C5F00376088 /* profileCell.swift */,
+				583DFA33230705B20075213B /* Controller */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +156,7 @@
 				58C7F0002312AFDE009A1B4A /* Data Saloon.swift */,
 				58BEC6A7231EDDE600C1A2BD /* Orders.swift */,
 				58400B75231FC2FF00738EF5 /* orderInformation.swift */,
+				58FD98CC232527C500CD50CB /* fontsize.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				583DFA35230705F90075213B /* AppsSearchController.swift in Sources */,
 				583DFA312306F0DF0075213B /* BaseTabBarController.swift in Sources */,
 				58BEC6A8231EDDE600C1A2BD /* Orders.swift in Sources */,
+				58FD98CD232527C500CD50CB /* fontsize.swift in Sources */,
 				58400B74231F866B00738EF5 /* statusOrders.swift in Sources */,
 				5808AFE423225C5F00376088 /* profileCell.swift in Sources */,
 				58400B76231FC2FF00738EF5 /* orderInformation.swift in Sources */,
